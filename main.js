@@ -91,3 +91,21 @@ function reg_conf() {
         location.href = "index.html";
     }
 }
+
+// 디지털 시계 | 
+window.onload = function() {
+    const clock = document.querySelector("#clock");
+
+// padStart를 통해 2자릿수로 만듦, "0"을 통해 앞에 0을 붙이게 됨
+// padStart는 String일 때 사용이 가능해서 String 값으로 변환하였음
+function getClock() {
+    const date = new Date();
+    const hours = String(date.getHours()).padStart(2, "0");
+    const min = String(date.getMinutes()).padStart(2, "0");
+    const sec = String(date.getSeconds()).padStart(2, "0");
+    clock.innerText = `${hours}:${min}:${sec}`;
+}
+
+getClock(); // 브라우저 최초 로딩 시 1초 딜레이 방지
+setInterval(getClock, 1000); // 1초마다 갱신되게
+}
