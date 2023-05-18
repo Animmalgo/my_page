@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+    <script src="common.js"></script>
+    <script src="q71.js"></script>
+</head>
+<body>
+    <style>
+        body {
+            background-color: gray;
+            color: whitesmoke;
+        }
+        #hp_midn {
+            width: 50px;
+        }
+        #hp_backn {
+            width: 50px;
+        }
+    </style>
+    <form id="reg_form">
+        <input type="text" name="reg_id" id="reg_id" minlength="6" maxlength="12" required placeholder="아이디">
+        <br>
+        <input type="password" name="reg_pw" id="reg_pw" minlength="6" maxlength="20" required placeholder="비밀번호">
+        <br>
+        <input type="password" name="reg_pw_re" id="reg_pw_re" minlength="6" maxlength="20" required placeholder="비밀번호 확인">
+        <br>
+        <input type="text" name="reg_name" id="reg_name" minlength="2" maxlength="4" required placeholder="이름">
+        <br>
+        <input type="email" name="reg_email" id="reg_email" placeholder="이메일 주소">
+        <br>
+        생년월일:
+        <!-- 생년월일_년도 -->
+        <select name="sel_birth_y" id="reg_birth_y">
+            <option value="">년도</option>
+            <option value="y_23">2023</option>
+            <option value="y_22">2022</option>
+            <option value="y_21">2021</option>
+            <option value="y_20">2020</option>
+        </select>
+
+        <!-- 생년월일_월 -->
+        <select name="sel_birth_m" id="reg_birth_m">
+            <option value="">월</option>
+            <option value="m_12">12</option>
+            <option value="m_11">11</option>
+            <option value="m_10">10</option>
+            <option value="m_9">9</option>
+            <option value="m_8">8</option>
+            <option value="m_7">7</option>
+            <option value="m_6">6</option>
+            <option value="m_5">5</option>
+            <option value="m_4">4</option>
+            <option value="m_3">3</option>
+            <option value="m_2">2</option>
+            <option value="m_1">1</option>
+        </select>
+
+        <!-- 생년월일_일 -->
+        <select name="sel_birth_d" id="reg_birth_d">
+            <option value="">일</option>
+            <option value="d_31">31</option>
+            <option value="d_30">30</option>
+            <option value="d_29">29</option>
+            <option value="d_28">28</option>
+            <option value="d_27">27</option>
+            <option value="d_26">26</option>
+            <option value="d_25">25</option>
+            <option value="d_24">24</option>
+            <option value="d_23">23</option>
+            <option value="d_22">22</option>
+            <option value="d_21">21</option>
+            <option value="d_20">20</option>
+            <option value="d_19">19</option>
+            <option value="d_18">18</option>
+            <option value="d_17">17</option>
+            <option value="d_16">16</option>
+            <option value="d_15">15</option>
+            <option value="d_14">14</option>
+            <option value="d_13">13</option>
+            <option value="d_12">12</option>
+            <option value="d_11">11</option>
+            <option value="d_10">10</option>
+            <option value="d_9">9</option>
+            <option value="d_8">8</option>
+            <option value="d_7">7</option>
+            <option value="d_6">6</option>
+            <option value="d_5">5</option>
+            <option value="d_4">4</option>
+            <option value="d_3">3</option>
+            <option value="d_2">2</option>
+            <option value="d_1">1</option>
+        </select>
+        <br>
+        성별:
+        <input type="radio" name="gender" id="reg_female" value="femail" checked>여성
+        <input type="radio" name="gender" id="reg_male" value="male">남성
+        <br>
+        전화번호:
+        <select name="hp_0" id="hp_first">
+            <option value="hp_010">010</option>
+            <option value="hp_011">011</option>
+            <option value="hp_017">017</option>
+        </select> -
+        <input type="text" name="hp_mid" id="hp_midn" minlength="4" maxlength="4" required> -
+        <input type="text" name="hp_back" id="hp_backn" minlength="4" maxlength="4" required>
+        <br>
+        <input type="button" name="register" id="register_fi" value="회원가입" onclick="reg_conf()">
+    </form>
+</body>
+</html>
