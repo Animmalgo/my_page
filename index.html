@@ -3,30 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>홈페이지</title>
+    <link rel="stylesheet" href="style.css">
     <script src="common.js"></script>
-    <script src="q71.js"></script>
+    <script src="main.js"></script>
 </head>
 <body>
-    <style>
-        body {
-            background-color: gray;
-            color: whitesmoke;
-        }
-        #login_box {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 220px;
-            height: 150px;
-            background-color: blueviolet;
-            border: 1px black solid;
-            border-radius: 15%;
-            box-shadow: 3px 3px 3px black;
-        }
-        /* #login_input {
-
-        } */
-    </style>
+    <!-- 로그인 박스 -->
     <div id="login_box">
         <div id="login_input">
             <input type="text" name="log_id" id="log_id" placeholder="아이디">
@@ -36,8 +18,12 @@
             <input type="button" name="log_but" value="로그인" onclick="login()">
             <input type="button" name="reg_but" value="회원가입" onclick="register()">
             <br>
-
         </div>
+    </div>
+
+    <!-- 시계 -->
+    <div id="clock_box">
+        <h1 id="clock"></h1>
     </div>
 </body>
 </html>
