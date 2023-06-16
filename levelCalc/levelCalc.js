@@ -5,7 +5,8 @@ document.addEventListener("DOMContentLoaded", function() {
     var charLvInput = document.getElementById("charLv");
     var resultEle = document.getElementById("result");
     var select = document.getElementsByName("select");
-    var selCheck = false // 체크 박스 여부 확인
+    
+    var selCheck = false; // 체크 여부 확인
     var dmgResult = -1;
     var expResult = -1;
     var mesoResult = -1;
@@ -184,9 +185,10 @@ document.addEventListener("DOMContentLoaded", function() {
                         break;
                 }
                 if (dmgResult == -1) {
-                    resultEle.textContent = "올바른 값을 입력하세요";
+                    resultEle.textContent = "레벨 입력 시 결과 출력";
+                    // console.log(selCheck);
                 } else {
-                    resultEle.textContent = "렙차 데미지: " + dmgResult + "%";
+                    resultEle.textContent = "최종 데미지: " + dmgResult + "%";
                 }
                 expResult = -1;
                 mesoResult = -1;
@@ -255,47 +257,37 @@ document.addEventListener("DOMContentLoaded", function() {
                     case lvCalc == 21:
                         expResult = 89;
                         break;
-                    case lvCalc <= 20:
-                    case lvCalc >= 19:
+                    case lvCalc == 20 || lvCalc == 19:
                         expResult = 95;
                         break;
-                    case lvCalc <= 18:
-                    case lvCalc >= 17:
+                    case lvCalc == 18 || lvCalc == 17:
                         expResult = 96;
                         break;
-                    case lvCalc <= 16:
-                    case lvCalc >= 15:
+                    case lvCalc == 16 || lvCalc == 15:
                         expResult = 97;
                         break;
-                    case lvCalc <= 14:
-                    case lvCalc >= 13:
+                    case lvCalc == 14 || lvCalc == 13:
                         expResult = 98;
                         break;
-                    case lvCalc <= 12:
-                    case lvCalc >= 11:
+                    case lvCalc == 12 || lvCalc == 11:
                         expResult = 99;
                         break;
                     case lvCalc == 10:
                         expResult = 100;
                         break;
-                    case lvCalc <= 9:
-                    case lvCalc >= 5:
+                    case lvCalc == 9 || lvCalc == 8 || lvCalc == 7 || lvCalc == 6 || lvCalc == 5:
                         expResult = 105;
                         break;
-                    case lvCalc <= 4:
-                    case lvCalc >= 2:
+                    case lvCalc == 4 || lvCalc == 3 || lvCalc == 2:
                         expResult = 110;
                         break;
-                    case lvCalc <= 1:
-                    case lvCalc >= -1:
+                    case lvCalc == 1 || lvCalc == 0 || lvCalc == -1:
                         expResult = 120;
                         break;
-                    case lvCalc <= -2:
-                    case lvCalc >= -4:
+                    case lvCalc == -2 || lvCalc == -3 || lvCalc == -4:
                         expResult = 110;
                         break;
-                    case lvCalc <= -5:
-                    case lvCalc >= -9:
+                    case lvCalc == -5 || lvCalc == -6 || lvCalc == -7 || lvCalc == -8 || lvCalc == -9:
                         expResult = 105;
                         break;
                     case lvCalc == -10:
@@ -376,11 +368,10 @@ document.addEventListener("DOMContentLoaded", function() {
                     case lvCalc == -35:
                         expResult = 14;
                         break;
-                    case lvCalc <= -39:
-                    case lvCalc >= -36:
+                    case lvCalc == -36 || lvCalc == -37 || lvCalc == -38 || lvCalc == -39:
                         expResult = 10;
                         break;
-                    case lvCalc >= -40:
+                    case lvCalc <= -40:
                         expResult = -11;
                         break;
                     default:
@@ -388,7 +379,8 @@ document.addEventListener("DOMContentLoaded", function() {
                         break;
                 }
                 if (expResult == -1) {
-                    resultEle.textContent = "올바른 값을 입력하세요";
+                    resultEle.textContent = "레벨 입력 시 결과 출력";
+                    // console.log(selCheck);
                 } else if (expResult == -11) {
                     resultEle.textContent = "40렙 이상은 100 고정";
                 } else {
@@ -461,8 +453,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     case lvCalc == 11:
                         mesoResult = -2;
                         break;
-                    case lvCalc >= 10:
-                    case lvCalc <= -10:
+                    case lvCalc == 10 || lvCalc == 9 || lvCalc == 8 || lvCalc == 7 || lvCalc == 6 || lvCalc == 5 || lvCalc == 4 || lvCalc == 3 || lvCalc == 2 || lvCalc == 1 || lvCalc == 0 || lvCalc == -1 || lvCalc == -2 || lvCalc == -3 || lvCalc == -4 || lvCalc == -5 || lvCalc == -6 || lvCalc == -7 || lvCalc == -8 || lvCalc == -9 || lvCalc == -10:
                         mesoResult = 0;
                         break;
                     case lvCalc == -11:
@@ -542,9 +533,10 @@ document.addEventListener("DOMContentLoaded", function() {
                         break;
                 }
                 if (mesoResult == -1) {
-                    resultEle.textContent = "올바른 값을 입력하세요";
+                    resultEle.textContent = "레벨 입력 시 결과 출력";
+                    // console.log(selCheck);
                 } else {
-                    resultEle.textContent = "메소 패널티: " + expResult + "%";
+                    resultEle.textContent = "메소 패널티: " + mesoResult + "%";
                 }
                 dmgResult = -1;
                 expResult = -1;
@@ -552,6 +544,6 @@ document.addEventListener("DOMContentLoaded", function() {
         } else if (!selCheck) {
             resultEle.textContent = "계산식 체크 확인";
         }
-        console.log(lvCalc);
+        // console.log("렙차" + lvCalc);
     }
 });
