@@ -1,3 +1,6 @@
+// 일부 활용 변수
+var nav = false;
+
 // id, pw 입력 및 로그인 버튼
 function login() {
     document.getElementById("log_id");
@@ -88,11 +91,13 @@ function reg_conf() {
     // 회원가입 완료
     if ( suc == true ) {
         alert("회원가입 성공!");
+        nav = true;
         location.href = "index.html";
+        return nav;
     }
 }
 
-// 디지털 시계 | 
+// 디지털 시계
 window.onload = function() {
     const clock = document.querySelector("#clock");
 
@@ -108,4 +113,9 @@ function getClock() {
 
 getClock(); // 브라우저 최초 로딩 시 1초 딜레이 방지
 setInterval(getClock, 1000); // 1초마다 갱신되게
+}
+
+// 렙반감
+function levCalc() {
+    location.href = "levelCalc/levelCalc.html";
 }
