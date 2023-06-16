@@ -1,0 +1,60 @@
+@font-face {
+    font-family: 'nanum_squareR_B';
+    src: url(../fonts/NanumSquareRoundB.ttf);
+}
+@font-face {
+    font-family: 'mapleB';
+    src: url(../fonts/MaplestoryB.ttf);
+}
+@font-face {
+    font-family: 'mapleL';
+    src: url(../fonts/MaplestoryL.ttf);
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+    color: whitesmoke;
+}
+
+#mainBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 180px;
+    margin: 10px;
+    background-color: #a1c4fd;
+    color: black;
+    border: 0.1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 15%;
+    box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.25);
+}
+
+#result {
+    font-family: mapleL;
+    display: flex;
+    justify-content: center;
+    color: white;
+    letter-spacing: 0.2px;
+}
+
+#inputBox {
+    margin: 15px;
+}
+
+#sel {
+    margin: -2px;
+    font-family: mapleL;
+    color: white;
+    letter-spacing: 0.2px;
+}

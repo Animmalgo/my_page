@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>렙반감</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="dmgLv.js"></script>
+</head>
+<body>
+    <div id = "mainBox">
+        <div id="sel">
+            <input type="radio" name="select" id="damage" value="damage"><label for="damage">데미지</label>
+            <input type="radio" name="select" id="exp" value="exp"><label for="exp">경험치</label>
+            <input type="radio" name="select" id="meso" value="meso"><label for="meso">메소</label>
+        </div>
+        <div id = "inputBox">
+            <input type="text" name="mobLv" id="mobLv" class="lvInput" placeholder="몬스터 레벨" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+            <br>
+            <input type="text" name="charLv" id="charLv" class="lvInput" placeholder="캐릭터 레벨" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+            <br>
+        </div>
+        <span id = "result">레벨 입력 시 결과 출력</span>
+    </div>
+</body>
+
+</html>
